@@ -32,9 +32,10 @@ body{
     font-size: 20px;
 }
 .boddy{
-    margin-top:200px;
+    margin-top:150px;
 }
 .inputs{
+
     width:300px;
     border: 1px solid black;
     text-align: center;
@@ -51,8 +52,14 @@ input[type=text],input[type=password]{
     text-align: center;
     font-size: large;
 }
-#submit{
+#submit1,#submit{
     width:100px;
     height:25px;
     margin:5px;
+}
+.error{
+    font-size: small;
+}
+.check{
+    margin-top: 30px;
 }
