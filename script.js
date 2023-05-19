@@ -69,13 +69,35 @@ let submit=document.getElementById('submit');
             savedinfo = [];
         }else {
             savedinfo = JSON.parse(myinfo);
+            let retrived=JSON.parse(localStorage.getItem('info'));
+            if(retrived.length>0){
+              for(let i = 0; i<retrived.length;i++){
+                 if(records.email==retrived[i].email){
+                    alert('email already registered.. please try with another email..');
+                    return false;
+                  }
+               }
+            }
         }
-        savedinfo.push(records);
         console.log(savedinfo);
+        savedinfo.push(records);
         localStorage.setItem("info",JSON.stringify(savedinfo));
-        alert('You are registered successfully..please login now..');
+        alert('You are registered successfully..now , you can login..');
         para[0].value='';
         para[1].value='';
         para[2].value='';
 }
- 
+//login...
+function login(){
+  let retrived=JSON.parse(localStorage.getItem('info'));
+  let emaill=document.getElementById('emaillogin').value;
+  let passwordl=document.getElementById('passwordlogin').value;
+  let errorl=document.getElementById('errorlogin');
+  for(let i=0;i<retrived.length;i++){
+    if(retrived[i].email == emaill && retrived[i].password==passwordl){
+      alert('login successful');
+    }else{
+      alert('please entery valid email or password');
+      }
+    }
+  }
