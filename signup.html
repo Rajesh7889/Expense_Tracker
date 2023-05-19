@@ -10,7 +10,9 @@
 <body>
  <div class="main">
     <div class="header">
-        <div class='headings'onclick="window.location.href='index.html'">home</div><div class='headings'>|</div><div onclick="window.location.href='module1.html'" class="headings">log-in</div>
+        <div class='headings'onclick="window.location.href='index.html'">home</div>
+        <div class='headings'>|</div>
+        <div onclick="window.location.href='module1.html'" class="headings">log-in</div>
     </div>
     <div class="boddy">
         <div class="inputs">
@@ -18,18 +20,18 @@
                 Sign-up
             </div>
             <div class="check">
-                <form id="form"  onsubmit='submition()' action="records.html">
+                <form id="form"  onsubmit = 'submition()' action="module1.html">
                    <div class="enteries">
-                       <input type="text" onkeyup="check1()" class='values' id="name" placeholder="User-Name..."  >
+                       <input type="text" onkeyup="check1()" class='values' id="name" placeholder="User-Name..."  ><br>
                        <span id="error1"class='error' style="color: red;"><br></span><div></div>
                    </div>
                    <div class="enteries">
-                       <input type="text"class='values' onkeyup="check3()" id="email" placeholder="email...">
-                       <span id="error3"  class='error'style="color: red;"><br></span>
+                       <input type="text"class='values' onkeyup="check2()" id="email" placeholder="email..."><br>
+                       <span id="error2"  class='error'style="color: red;"><br></span>
                     </div>
                    <div class="enteries">
-                       <input type="password"class='values' onkeyup="check2()" id="password" placeholder="Password...">
-                       <span id="error2"  class='error'style="color: red;"><br></span>
+                       <input type="password"class='values' onkeyup="check3()" id="password" placeholder="Password..."><br>
+                       <span id="error3"  class='error'style="color: red;"><br></span>
                    </div>
                   <div class="submit">
                       <input  onclick='check()' id="submit" type="submit">
@@ -39,6 +41,6 @@
         </div>  
     </div>  
  </div>     
-    
+    <script src="script.js"></script>
 </body>
 </html>
