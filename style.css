@@ -63,3 +63,7 @@ input[type=text],input[type=password]{
 .check{
     margin-top: 30px;
 }
+#errorlogin{
+    color:red;
+    font-size: small;
+}

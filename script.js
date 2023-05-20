@@ -4,6 +4,9 @@ let submit=document.getElementById('submit');
     let error= document.querySelectorAll('.error');
     let records={};
      //perventing default submition..
+     form.addEventListener('submit',function(event){
+      event.preventDefault();
+     })
   //empty fields check....
    function check(){
     for(let i=0;i<para.length;i++){
@@ -95,9 +98,11 @@ function login(){
   let errorl=document.getElementById('errorlogin');
   for(let i=0;i<retrived.length;i++){
     if(retrived[i].email == emaill && retrived[i].password==passwordl){
-      alert('login successful');
+      errorl.innerHTML='';
+      window.location.href='main.html';
     }else{
-      alert('please entery valid email or password');
+      errorl.innerHTML='*please enter valid email or password';
+      return false;
       }
     }
   }
