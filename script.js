@@ -27,6 +27,7 @@ let submit=document.getElementById('submit');
       para[0].style.border='solid 2px green';
       submit.disabled=false;
     }else {
+      submit.disabled=true;
      error=document.querySelectorAll('.error')[0];
       error.innerHTML='*enter a valid name';
       return false;
@@ -41,6 +42,7 @@ let submit=document.getElementById('submit');
      para[1].style.border='solid 2px green';
      submit.disabled=false;
     }else {
+      submit.disabled=true;
      error=document.querySelectorAll('.error')[1];
        error.innerHTML='*enter a valid email..';
        return false;
@@ -55,24 +57,26 @@ let submit=document.getElementById('submit');
       para[2].style.border='solid 2px green';
       submit.disabled=false; 
      }else {
+      submit.disabled=true;
        error=document.querySelectorAll('.error')[2];
         error.innerHTML='*atleast one of each[A-Z,a-z,0-9,a secial character(length>8)]..';
         return false;
      }
  }
  //submiting the values...
+ 
  function submition(){
        records={
              Name:para[0].value,
              email:para[1].value,
              password:para[2].value
                }; 
-      let myinfo= localStorage.getItem("info");
+      let myinfo= localStorage.getItem(`${records.email}`);
         if(myinfo == null){
             savedinfo = [];
         }else {
             savedinfo = JSON.parse(myinfo);
-            let retrived=JSON.parse(localStorage.getItem('info'));
+            let retrived=JSON.parse(localStorage.getItem(`${records.email}`));
             if(retrived.length>0){
               for(let i = 0; i<retrived.length;i++){
                  if(records.email==retrived[i].email){
@@ -82,27 +86,28 @@ let submit=document.getElementById('submit');
                }
             }
         }
-        console.log(savedinfo);
+        
         savedinfo.push(records);
-        localStorage.setItem("info",JSON.stringify(savedinfo));
+        localStorage.setItem(`${records.email}`,JSON.stringify(savedinfo));
         alert('You are registered successfully..now , you can login..');
         para[0].value='';
         para[1].value='';
         para[2].value='';
+         window.location.href='module1.html';
+      
 }
 //login...
 function login(){
-  let retrived=JSON.parse(localStorage.getItem('info'));
-  let emaill=document.getElementById('emaillogin').value;
+  var emaill=document.getElementById('emaillogin').value;
   let passwordl=document.getElementById('passwordlogin').value;
   let errorl=document.getElementById('errorlogin');
-  for(let i=0;i<retrived.length;i++){
-    if(retrived[i].email == emaill && retrived[i].password==passwordl){
-      errorl.innerHTML='';
-      window.location.href='main.html';
-    }else{
-      errorl.innerHTML='*please enter valid email or password';
-      return false;
-      }
-    }
+  let retrived=JSON.parse(localStorage.getItem(`${emaill}`));
+  sessionStorage.setItem('email',`${emaill}`);
+if(retrived !==null && retrived[0].password==passwordl){console.log('hello');
+  errorl.innerHTML='';
+  window.location.href='main.html';
+}else{
+  errorl.innerHTML='*please enter valid email or password';
+  return false;
   }
+}  

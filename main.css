@@ -1,0 +1,43 @@
+*{
+    margin:0%;
+    padding: 0%;
+    border: none;
+}
+body{
+    margin-top: 5px;
+    height:823px;
+    background-image:url('background.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+#summery-page{
+    height:100%;
+}
+.row{
+    margin: 5px;
+    color: rgb(1, 8, 13);
+    
+}
+#row3,#row4{
+    height:80%;
+    text-align: center;
+}
+#row1,#row2,#row4,#book-containor{
+    height:5%;
+    color: aliceblue;
+    padding-top: 5px;
+    background-color: rgba(0, 0, 0, 0.303);
+}
+#user-name,#title{
+    height: 70%;
+    margin: 0px 0px 0px 20px;
+}
+#navigation-bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav{
+    margin-left: 5px;
+    font-size: large;
+}
