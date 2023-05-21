@@ -32,9 +32,8 @@
       let table= `<tr><th></th><tr>`;
       create[0].innerHTML=table;
       for(let i=1;i<=retrived.length;i++){
-         console.log(retrived[i].book);
       table+=`<tr><td> <div id='book-box'>
-                      <div id="books"><div id='bok' onclick="details(${retrived[i]})">${retrived[i].book}</div>
+                      <div id="books"><div id='bok' onclick="details(${i})">${retrived[i].book}</div>
                       <div class='edt' onclick='edit(${i})'><img id="edit" src='edit.jpg'></div>
                       <div class='edt' onclick='deletee(${i})'><img id='delete' src='delete.jpg'></div>
                       </div></div>
@@ -52,4 +51,10 @@
       return 0;
        }
    }
+   function details(a){
+      sessionStorage.setItem('book',`${a}`);
+      window.location.href='book.html'; 
+    }
+
 }
+   
