@@ -10,29 +10,29 @@
 </head>
 <body onload="displaybooks()">
      <div id="summery-page" >
-        <div class="row" id="row1">
-            <div id="user-name"> </div>
-       </div>
+        <div class="row" id="row5">
+          <div id="navigation-bar">
+            <div id="user-name" > </div>
+            <div class="nav">|</div>
+            <div class="nav">books</div> <div class="nav">|</div>
+            <div class="nav"> settings</div><div class="nav">|</div>
+            <div class="nav">help</div>
+          </div>   
+    </div>
        <div class="row" id="row2">
             <div id="title">Your record-books</div>
-       </div>
+       </div> <div class="row" id="row4">
+        <div> <input type="button" onclick="cr()" id="button" value="create-book"></div>
+       <div> <input type="button" onclick="create()" id="button1" value="creat"></div>
+      </div>
        <div class="row" id="row3">
-        <table id="book-containor" border="2px solid red"></table>
+        <table id="book-containor"></table>
        </div> 
        <div class="row0" id="row0">
         <input type="text" id="text" placeholder="Enter-bookName:" >
        </div>
-       <div class="row" id="row4">
-         <div> <input type="button" onclick="cr()" id="button" value="create-book"></div>
-        <div> <input type="button" onclick="create()" id="button1" value="creat"></div>
-       </div>
-       <div class="row" id="row5">
-             <div id="navigation-bar">
-                 <div class="nav">books</div> <div class="nav">|</div>
-                 <div class="nav"> settings</div> <div class="nav">|</div>
-                 <div class="nav">help</div>
-             </div>   
-       </div>
+      
+       
      </div>
      <script src="main.js"></script>
    

@@ -11,39 +11,50 @@
            height: 15%;
         }
         #row3{
-            height: 55%;
+            height: 300px;
         }
-        .net{
-            margin-right: 50%;
-            font-size: 20px;
+
+        .net,.balance{
+            width: 40%;
+            margin-left: 4%;
+            font-size: 22px;
         }
         #ntblnc{
+            margin-top: 5%;
             border-bottom: 1px solid white;
         }
         input[type=button]{
-            width: 100px;
-            height: 50px;
-           margin-left: 30px;
-            align-items: last baseline;
+            width: 70%;
+            height: 40px;
         }
-        #book-name{
-            margin-left: 5px;
+        #cash-in,#cash-out{
+            width: 40%;  
         }
-        
+        #navigation-bar{
+            font-size: 20px;
+        }
 
     </style>
 </head>
-<body onload="main1load()" >
+<body onload="display()" >
     <div id="summery-page" >
+        <div class="row" id="row5">
+            <div id="navigation-bar">
+                <div id="book-name" class="nav"></div><div class="nav">|</div>
+                <div class="nav" onclick="window.location.href='main.html';">books</div> <div class="nav">|</div>
+                <div class="nav"> settings</div> <div class="nav">|</div>
+                <div class="nav">help</div>
+            </div>   
+      </div>
         <div class="row" id="row1">
-                <div id="book-name"> </div>
+               
                  <div id="cash-in">
                      <input type="button" onclick="innput()" id="in1" value="cash-in">
-                     <input type="button" onclick="innput1()" id="in2" value="save" style="display: none;">
+                     <input type="button" onclick="innput1(1)" id="in2" value="save" style="display: none;">
                  </div>
                  <div id="cash-out">
                      <input type="button" onclick="outtput()" id="out1" value="cash-out">
-                     <input type="button" onclick="outtput1()"id="out2" value="save" style="display: none;">
+                     <input type="button" onclick="outtput1(0)"id="out2" value="save" style="display: none;">
                  </div>
        </div>
        <div class="row" id="row2">
@@ -51,31 +62,25 @@
        </div>
        <div id="total" class="row">
            <div id='ntblnc' class="netrow">
-              <div class="net" style="font-size: 22px;" id="net">Net balance:</div>
-              <div class="balance" id="balance">3300</div>
+              <div class="net"  id="net">Net balance:</div>
+              <div class="balance" id="balance">0</div>
             </div>
             <div class="netrow">
                 <div class="net"id="net1">Total in(+):</div>
-                <div class="balance" id="balance1">3300</div>
+                <div class="balance" id="balance1">0</div>
               </div>
               <div class="netrow">
                 <div class="net" id="net2">Total out(-):</div>
-                <div class="balance" id='balance2'>3300</div>
+                <div class="balance" id='balance2'>0</div>
               </div>
        </div> 
        <div class="row" id="row3">
-        <table id="book-containor" border="1px"></table>
+        <table id="book-record" border="1px"></table>
        </div> 
        <div class="row0" id="row0">
-        <input type="text" id="text" placeholder="Enter-amount:" >
+        <input type="text" id="text"  placeholder="Enter-amount:" >
        </div>
-       <div class="row" id="row5">
-             <div id="navigation-bar">
-                 <div class="nav" onclick="window.location.href='main.html';">books</div> <div class="nav">|</div>
-                 <div class="nav"> settings</div> <div class="nav">|</div>
-                 <div class="nav">help</div>
-             </div>   
-       </div>
+       
      </div>
      <script src="main1.js"></script>
      <script src="main.js"></script>
