@@ -19,19 +19,30 @@
     title.style.visibility='visible';
     out2.style.display='block';
     out1.style.display='none';
+   
    }
    function innput1(){
     out1.disabled=false;
     title.style.visibility='hidden';
     in2.style.display='none';
     in1.style.display='block';
-    let rcrds={
-        book:title.value,
-          }
-    retrived.push(rcrds);
-    localStorage.setItem(`${email}`,JSON.stringify(retrived));
-    title.value='';
-    displaybooks();
+    saving();
+   }
+   function saving(){
+    let total={
+        netBalance:0,
+        totalIn:0,
+        totalOut:0,
+    }
+      let webtask = localStorage.getItem(`${retrived[index].book}`);
+             if(webtask == null){
+                 taskobj = [];
+             }else {
+                 taskobj = JSON.parse(webtask);
+             }
+             taskobj.push(total);
+             console.log(taskobj);
+             localStorage.setItem(`${retrived[index].book}`,JSON.stringify(taskobj));
    }
    function outtput1(){
     in1.disabled=false;
