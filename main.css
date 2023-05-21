@@ -18,26 +18,85 @@ body{
     color: rgb(1, 8, 13);
     
 }
-#row3,#row4{
-    height:80%;
+#row3{
+    height:60%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+#row1,#row2,#row5,#book-containor{
+    height:10%;
+    color: aliceblue;
+    font-size: 35px;
+    background-color: rgba(0, 0, 0, 0.303);
     text-align: center;
 }
-#row1,#row2,#row4,#book-containor{
-    height:5%;
-    color: aliceblue;
-    padding-top: 5px;
-    background-color: rgba(0, 0, 0, 0.303);
-}
 #user-name,#title{
-    height: 70%;
-    margin: 0px 0px 0px 20px;
+    height: 60%;
 }
-#navigation-bar{
+input[type=button]{
+    width:40%;
+    height:40%;
+    margin-left: 30%;
+    font-size: 25px;
+    color: aliceblue;
+    background-color: rgba(255, 0, 0, 0.41);
+    border-radius: 15px;
+}
+#button1{
+    display: none;
+}
+#text{
+    width:40%;
+    height:40%;
+    margin-left: 30%;
+    font-size: 25px;
+    color: rgb(14, 1, 1);
+   visibility: hidden;
+   text-align: center;
+   border-radius: 5px;
+}
+#navigation-bar,#books{
     display: flex;
     align-items: center;
     justify-content: center;
 }
+#edit,#delete{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border:none;
+    margin: 5px;
+   
+}
+#bok{
+    width:60%;
+    overflow-x: hidden;
+}
+
 .nav{
     margin-left: 5px;
-    font-size: large;
+    font-size: 35px;
+}
+table{
+    width:70%;
+    margin: auto;
+    background-size: cover;
+    background-attachment: fixed;
+    color: aliceblue;
+}
+#books{
+    margin:auto;
+    margin-top: 10px;
+    width: 60%;
+    border-radius: 15px;
+    background-color: rgba(0, 128, 0, 0.418);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#title{
+    background-color: rgba(255, 0, 0, 0.41);
 }
