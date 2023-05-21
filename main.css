@@ -17,7 +17,7 @@ body{
     margin: 5px;  
 }
 #row3{
-    height:45%;
+    height:60%;
     overflow-y: scroll;
     scroll-behavior: smooth;
 }
@@ -31,9 +31,7 @@ body{
     background-color: rgba(0, 0, 0, 0.303);
     text-align: center;
 }
-#total{
-    height:20%;
-}
+
 #row1{
     margin-top: 10px;
 }
@@ -62,7 +60,10 @@ input[type=button]{
    text-align: center;
    border-radius: 5px;
 }
-#navigation-bar,#books,#total{
+#row1{
+    display: flex;
+}
+#navigation-bar,#books,.netrow,#row1{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -103,4 +104,8 @@ table{
 }
 #title{
     background-color: rgba(255, 0, 0, 0.41);
+}
+.hed{
+    margin:auto;
+    
 }

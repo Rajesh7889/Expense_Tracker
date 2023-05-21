@@ -6,22 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>book</title>
     <link rel="stylesheet" type="text/css" href="main.css">
+    <style>
+        #total{
+           height: 15%;
+        }
+        #row3{
+            height: 55%;
+        }
+        .net{
+            margin-right: 50%;
+            font-size: 20px;
+        }
+        #ntblnc{
+            border-bottom: 1px solid white;
+        }
+        input[type=button]{
+            width: 150px;
+            height: 50px;
+           margin-left: 30px;
+            align-items: last baseline;
+        }
+        #book-name{
+            margin-left: 5px;
+        }
+        
+
+    </style>
 </head>
 <body onload="main1load()" >
     <div id="summery-page" >
         <div class="row" id="row1">
-            <div id="book-name"> </div>
+                <div id="book-name"> </div>
+                 <div id="cash-in">
+                     <input type="button" onclick="innput()" id="in1" value="cash-in">
+                     <input type="button" onclick="innput1()" id="in2" value="save" style="display: none;">
+                 </div>
+                 <div id="cash-out">
+                     <input type="button" onclick="outtput()" id="out1" value="cash-out">
+                     <input type="button" onclick="outtput1()"id="out2" value="save" style="display: none;">
+                 </div>
        </div>
        <div class="row" id="row2">
             <div id="title">details</div>
        </div>
        <div id="total" class="row">
-        hello
+           <div id='ntblnc' class="netrow">
+              <div class="net" style="font-size: 22px;" id="net">Net balance:</div>
+              <div class="balance" id="balance">3300</div>
+            </div>
+            <div class="netrow">
+                <div class="net"id="net1">Total in(+):</div>
+                <div class="balance" id="balance1">3300</div>
+              </div>
+              <div class="netrow">
+                <div class="net" id="net2">Total out(-):</div>
+                <div class="balance" id='balance2'>3300</div>
+              </div>
        </div> 
        <div class="row" id="row3">
         <table id="book-containor" border="1px"></table>
        </div> 
-       
+       <div class="row0" id="row0">
+        <input type="text" id="text" placeholder="Enter-amount:" >
+       </div>
        <div class="row" id="row5">
              <div id="navigation-bar">
                  <div class="nav" onclick="window.location.href='main.html';">books</div> <div class="nav">|</div>
