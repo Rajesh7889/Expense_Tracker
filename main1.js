@@ -58,6 +58,7 @@
         netBalance:0,
         totalIn:0,
         totalOut:0,
+        date:0,
     }
       let webtask = localStorage.getItem(`${retrived[index].book}`);
              if(webtask == null){
@@ -78,6 +79,7 @@
                 total.netBalance= parseInt(total.netBalance)-parseInt(title.value);
                 total.totalOut=parseInt(total.totalOut)+parseInt(title.value);
               }
+              total.date=now.toLocaleString();
               taskobj.unshift(total);
          localStorage.setItem(`${retrived[index].book}`,JSON.stringify(taskobj));       
    }
@@ -92,9 +94,9 @@
    return 0;
     }
 }
-   
+let webtask = JSON.parse(localStorage.getItem(`${retrived[index].book}`));
    function display(){
-    let webtask = JSON.parse(localStorage.getItem(`${retrived[index].book}`));
+    
     net.innerHTML=webtask[0].netBalance;
     netin.innerHTML=webtask[0].totalIn;
     netout.innerHTML=webtask[0].totalOut;
@@ -102,12 +104,12 @@
     let table= `<tr><th></th><tr>`;
     create[0].innerHTML=table;
     for(let i=0;i<webtask.length-1;i++){
-    table+=`<tr><td> <div id='book-box'><div>${now.toLocaleString()}</div>
+    table+=`<tr><td> <div id='book-box'><div>${webtask[i].date}</div>
                     <div id="books">
                     <div>
-                    <div id='bok1' onclick="edit(${i})"> Net Balance:${webtask[i].netBalance}</div>
-                    <div id='bok1' onclick="edit(${i})"> last in:${webtask[i].totalIn - webtask[i+1].totalIn}</div>
-                    <div id='bok1' onclick="edit(${i})"> last out:${webtask[i].totalOut - webtask[i+1].totalOut}</div>
+                    <div id='bok1' > Net Balance:${webtask[i].netBalance}</div>
+                    <div id='bok1' > last in:${webtask[i].totalIn - webtask[i+1].totalIn}</div>
+                    <div id='bok1' > last out:${webtask[i].totalOut - webtask[i+1].totalOut}</div>
                     </div>
                     <div class='edt' onclick='edit(${i})'><img id="edit" src='edit.jpg'></div>
                     <div class='edt' onclick='deletee(${i})'><img id='delete' src='delete.jpg'></div>
@@ -115,5 +117,24 @@
                     </td></tr>`;
     create[0].innerHTML=table;
     }
-    
-}}
+  }
+  function edit(a){
+   
+    let createe=document.querySelectorAll('#book-record-edit');
+let table= `<tr><th><u>Edit</u></th><tr>`;
+createe[0].innerHTML=table; alert('hello')
+table+=`<tr><td> <div id='book-box'>
+                <div id="books">
+                <div>
+                <div id='bok1' > Net Balance:<input type='text' value='${webtask[a].netBalance}'></div>
+                <div id='bok1' > last in:<input type='text' value='${webtask[a].totalIn - webtask[a+1].totalIn}'></div>
+                <div id='bok1' > last out:<input type='text' value='${webtask[a].totalOut - webtask[a+1].totalOut}'></div>
+                </div>
+                <div class='edt' onclick='save(${a})'><img id="edit" src='edit.jpg'></div>
+                <div class='edt' onclick='deletee(${a})'><img id='delete' src='delete.jpg'></div>
+                </div></div>
+                </td></tr>`;
+createe[0].innerHTML=table;
+
+}
+}

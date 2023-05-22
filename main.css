@@ -24,7 +24,7 @@ body{
 ::-webkit-scrollbar{
     display: none;
 }
-#row2,#row5,#book-containor,#total{
+#row2,#row5,#book-containor,#total ,#edit{
     height:10%;
     color: aliceblue;
     font-size: 25px;
@@ -33,7 +33,7 @@ body{
 }
 
 #row1{
-    margin-top: 10px;
+   
 }
 #user-name,#title,#book-name{
     height: 60%;
@@ -91,6 +91,14 @@ table{
     background-size: cover;
     background-attachment: fixed;
     color: aliceblue;
+}
+#edit1{
+    background-color: rgba(127, 164, 196, 0.453);
+    height:70px;
+    width:200px ;
+    margin:auto;
+    margin-top: 0%;
+    border-radius: 15px;
 }
 #books{
     margin:auto;
