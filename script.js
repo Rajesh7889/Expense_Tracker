@@ -96,7 +96,7 @@ let submit=document.getElementById('submit');
          window.location.href='module1.html';
       
 }
-//login...
+//login..
 function login(){
   var emaill=document.getElementById('emaillogin').value;
   let passwordl=document.getElementById('passwordlogin').value;

@@ -27,14 +27,11 @@ body{
 #row2,#row5,#book-containor,#total ,#edit{
     height:10%;
     color: aliceblue;
-    font-size: 25px;
+    font-size: px;
     background-color: rgba(0, 0, 0, 0.303);
     text-align: center;margin-top: 5px;;
 }
 
-#row1{
-   
-}
 #user-name,#title,#book-name{
     height: 60%;
 }
@@ -58,7 +55,7 @@ input[type=button]{
     color: rgb(14, 1, 1);
    visibility: hidden;
    text-align: center;
-   border-radius: 5px;
+   border-radius: 15px;
 }
 #row1,.netrow{
     display: flex;
@@ -94,13 +91,14 @@ table{
 }
 #edit1{
     background-color: rgba(127, 164, 196, 0.453);
-    height:70px;
-    width:200px ;
+    height:200px;
+    width:300px ;
     margin:auto;
     margin-top: 0%;
     border-radius: 15px;
+    display: none;
 }
-#books{
+#books,#books1{
     margin:auto;
     margin-top: 10px;
     width: 70%;
@@ -109,6 +107,9 @@ table{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+#books1{
+    background-color: rgba(0, 0, 0, 0);
 }
 #title{
     background-color: rgba(255, 0, 0, 0.41);
