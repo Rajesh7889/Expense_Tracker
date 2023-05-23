@@ -121,7 +121,7 @@
                     <div id='bok1' > last in:${webtask[i].totalIn - webtask[i+1].totalIn}</div>
                     <div id='bok1' > last out:${webtask[i].totalOut - webtask[i+1].totalOut}</div>
                     </div>
-                    <div class='edt' onclick='edit(${i})'><img id="edit" src='edit.jpg'></div>
+                    <div class='edt' onclick='edit(${i})'><img id="edit" src='saved.jpg'></div>
                     <div class='edt' onclick='deletee(${i})'><img id='delete' src='delete.jpg'></div>
                     </div></div>
                     </td></tr>`;
@@ -144,12 +144,12 @@ createe[0].innerHTML=table;
 table+=`<tr><td> <div id='book-box'>
                 <div id="books1">
                 <div>
-                <div id='bok1' > Net Balance:<input type='text'id='blnc' value='${webtask[a].netBalance}'></div>
+                <div id='bok1' > Net Balance:${webtask[a].netBalance}</div>
                 <div id='bok1' > last in:<input type='text'id='inn' value='${webtask[a].totalIn - webtask[a+1].totalIn}'></div>
                 <div id='bok1' > last out:<input type='text'id='ouut' value='${webtask[a].totalOut - webtask[a+1].totalOut}'></div>
                 </div>
-                <div class='edt' onclick='save(${a})'><img id="edit" src='saved.jpg'></div>
-                <div class='edt' onclick='deletee(${a})'><img id='delete' src='delete.jpg'></div>
+                <div class='edt' onclick='save(${a})'><img id="edit" src='saved1.jpg'></div>
+                
                 </div></div>
                 </td></tr>`;
 createe[0].innerHTML=table;
@@ -172,8 +172,8 @@ function save(a){
   let newtotalout=newout-lastout;
   let newtotalin=newin-lastin;
   let newtotal=newtotalin-newtotalout;
-
- webtask[a].netBalance=webtask[a+1].netBalance+newtotal;
+alert(newtotal);
+ webtask[a].netBalance=webtask[a].netBalance+newtotal;
   webtask[a].totalIn=webtask[a+1].totalIn+newin;
   webtask[a].totalOut=webtask[a+1].totalOut+newout;
   webtask.splice(a,1,webtask[a]);
@@ -184,6 +184,7 @@ function save(a){
 //  let newnetBalance=netBalance+newin+newout;
 //  let difference=newnetBalance-netBalance;
 let b=a-1;
+if(a>0){
 for( b;b>=0;b--){
   webtask[b].netBalance=webtask[b].netBalance+newtotal;
  // alert( webtask[b].netBalance); alert(newtotal);
@@ -194,7 +195,7 @@ for( b;b>=0;b--){
 
   webtask.splice(b,1,webtask[b]);
  // console.log(webtask);
- }
+ }}
  localStorage.setItem(`${retrived[index].book}`,JSON.stringify(webtask));
  display();
 }

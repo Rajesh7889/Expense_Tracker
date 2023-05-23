@@ -32,7 +32,7 @@ body{
     text-align: center;margin-top: 5px;;
 }
 
-#user-name,#title,#book-name{
+#title,#book-name{
     height: 60%;
 }
 input[type=button]{
@@ -78,7 +78,7 @@ input[type=button]{
     overflow-x: hidden;
 }
 
-.nav{
+.nav,#user-name{
     margin-left: 5px;
     font-size: 35px;
 }
