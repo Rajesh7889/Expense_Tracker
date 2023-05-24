@@ -89,7 +89,7 @@ let submit=document.getElementById('submit');
         
         savedinfo.push(records);
         localStorage.setItem(`${records.email}`,JSON.stringify(savedinfo));
-        alert('You are registered successfully..now , you can login..');
+        alert('You are registered successfully..now you can login..');
         para[0].value='';
         para[1].value='';
         para[2].value='';

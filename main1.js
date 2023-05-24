@@ -172,12 +172,11 @@ function save(a){
   let newtotalout=newout-lastout;
   let newtotalin=newin-lastin;
   let newtotal=newtotalin-newtotalout;
-alert(newtotal);
  webtask[a].netBalance=webtask[a].netBalance+newtotal;
   webtask[a].totalIn=webtask[a+1].totalIn+newin;
   webtask[a].totalOut=webtask[a+1].totalOut+newout;
   webtask.splice(a,1,webtask[a]);
-  console.log(webtask);
+  //console.log(webtask);
   localStorage.setItem(`${retrived[index].book}`,JSON.stringify(webtask));
   
 //  let netBalance= webtask[a].netBalance - (lastin +lastout);
@@ -197,6 +196,7 @@ for( b;b>=0;b--){
  // console.log(webtask);
  }}
  localStorage.setItem(`${retrived[index].book}`,JSON.stringify(webtask));
+ alert('modifications updated successfully..');
  display();
 }
 
